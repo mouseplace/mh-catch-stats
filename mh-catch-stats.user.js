@@ -6,7 +6,7 @@
 // @author       bradp
 // @namespace    bradp
 // @match        https://www.mousehuntgame.com/*
-// @icon         https://brrad.com/mouse.png
+// @icon         https://i.mouse.rip/mouse.png
 // @grant        none
 // @run-at       document-end
 // @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.2.0/mousehunt-utils.js
@@ -74,13 +74,13 @@
     // Create the image element.
     const image = document.createElement('div');
     image.classList.add('mh-catch-stats-image');
-    image.style.backgroundImage = `url('${ mouse.image }')`;
+    image.style.backgroundImage = `url('${mouse.image}')`;
 
     // If the mouse has a crown, add it.
     if (mouse.crown && 'none' !== mouse.crown) {
       const crown = document.createElement('div');
       crown.classList.add('mh-catch-stats-crown');
-      crown.style.backgroundImage = `url('https://www.mousehuntgame.com/images/ui/crowns/crown_${ mouse.crown }.png')`;
+      crown.style.backgroundImage = `url('https://www.mousehuntgame.com/images/ui/crowns/crown_${mouse.crown}.png')`;
       image.appendChild(crown);
     }
 
@@ -184,113 +184,114 @@
   };
 
   addStyles(`#mh-catch-stats {
-			position: absolute;
-			top: 25px;
-			left: 25px;
-			z-index: 50;
-		}
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 50;
+  }
 
-		.mh-catch-stats-wrapper {
-			width: 275px;
-			background: #f6f3eb;
-			border: 1px solid #534022;
-			box-shadow: 1px 1px 1px 0px #9d917f, 1px 3px 5px 0px #6c6c6c;
-			transition: box-shadow .25s;
-		}
+  .mh-catch-stats-wrapper {
+    width: 275px;
+    background: #f6f3eb;
+    border: 1px solid #534022;
+    box-shadow: 1px 1px 1px 0px #9d917f, 1px 3px 5px 0px #6c6c6c;
+    transition: box-shadow .25s;
+  }
 
-		.mh-is-dragging .mh-catch-stats-wrapper {
-		    box-shadow: 1px 1px 1px 0px #9d917f, 0px 7px 9px 2px #6c6c6c;
-		}
+  .mh-is-dragging .mh-catch-stats-wrapper {
+    box-shadow: 1px 1px 1px 0px #9d917f, 0px 7px 9px 2px #6c6c6c;
+  }
 
-		.mh-catch-stats-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			border-bottom: 1px solid #ceb7a6;
-			background-color: #926944;
-			padding: 10px;
-			color: #f6f3eb;
-			cursor: grab;
-		}
+  .mh-catch-stats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ceb7a6;
+    background-color: #926944;
+    padding: 10px;
+    color: #f6f3eb;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
 
-		.mh-catch-stats-header h1 {
-			color: #f6f3eb;
-		}
+  .mh-catch-stats-header h1 {
+    color: #f6f3eb;
+  }
 
-		.mh-catch-stats-close {
-			cursor: pointer;
-		}
+  .mh-catch-stats-close {
+    cursor: pointer;
+  }
 
-		.mh-catch-stats-close:hover {
-			outline: 1px solid #ccc;
-			background-color: #eee;
-			border-radius: 50%;
-			color: #926944;
-		}
+  .mh-catch-stats-close:hover {
+    outline: 1px solid #ccc;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #926944;
+  }
 
-		.mh-catch-stats-body {
-			max-height: 90vh;
-			overflow-y: scroll;
-			overflow-x: hidden;
-		}
+  .mh-catch-stats-body {
+    max-height: 90vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 
-		.mh-catch-stats-wrapper .mh-catch-stats:nth-child(odd) {
-			background-color: #e8e3d7;
-		}
+  .mh-catch-stats-wrapper .mh-catch-stats:nth-child(odd) {
+    background-color: #e8e3d7;
+  }
 
-		.mh-catch-stats {
-			display: flex;
-			justify-content: space-between;
-			padding: 2px 0;
-			align-items: center;
-			padding: 10px 10px;
-			color: #000;
-		}
+  .mh-catch-stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+    align-items: center;
+    padding: 10px 10px;
+    color: #000;
+  }
 
-		.mh-catch-stats:hover,
-		.mh-catch-stats-wrapper .mh-catch-stats:nth-child(odd):hover {
-			outline: 1px solid #ccc;
-			background-color: #eee;
-			text-decoration: none;
-			color: #665f5f;
-		}
+  .mh-catch-stats:hover,
+  .mh-catch-stats-wrapper .mh-catch-stats:nth-child(odd):hover {
+    outline: 1px solid #ccc;
+    background-color: #eee;
+    text-decoration: none;
+    color: #665f5f;
+  }
 
-		.mh-catch-stats-image {
-			position: relative;
-			width: 40px;
-			height: 40px;
-			display: inline-block;
-			vertical-align: middle;
-			background-size: contain;
-			background-repeat: no-repeat;
-			border-radius: 2px;
-			box-shadow: 1px 1px 1px #999;
-		}
+  .mh-catch-stats-image {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px #999;
+  }
 
-		.mh-catch-stats-crown {
-			position: absolute;
-			right: -5px;
-			bottom: -5px;
-			width: 20px;
-			height: 20px;
-			background-repeat: no-repeat;
-			background-position: 50% 50%;
-			background-color: #fff;
-			border: 1px solid #333;
-			background-size: 80%;
-			border-radius: 50%;
-		}
+  .mh-catch-stats-crown {
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #fff;
+    border: 1px solid #333;
+    background-size: 80%;
+    border-radius: 50%;
+  }
 
-		.mh-catch-stats-name {
-			display: inline-block;
-			vertical-align: middle;
-			padding-left: 10px;
-		}
+  .mh-catch-stats-name {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
 
-		.mh-catch-stats-catches {
-			padding-right: 5px;
-		}
-	`);
+  .mh-catch-stats-catches {
+    padding-right: 5px;
+  }
+  `);
 
   addSubmenuItem({
     menu: 'mice',
