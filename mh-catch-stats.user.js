@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Location Catches
-// @version      1.2.1
+// @version      1.2.2
 // @description  View your mouse catches in your current location.
 // @license      MIT
 // @author       bradp
@@ -190,28 +190,37 @@
     z-index: 50;
   }
 
+  @media screen and (prefers-reduced-motion: reduce) {
   .mh-catch-stats-wrapper {
     width: 275px;
     background: #f6f3eb;
     border: 1px solid #534022;
-    box-shadow: 1px 1px 1px 0px #9d917f, 1px 3px 5px 0px #6c6c6c;
+    box-shadow: 1px 1px 1px 0 #9d917f, 1px 3px 5px 0 #6c6c6c;
+    transition: none;
+  }
+  }
+
+  .mh-catch-stats-wrapper {
+    width: 275px;
+    background: #f6f3eb;
+    border: 1px solid #534022;
+    box-shadow: 1px 1px 1px 0 #9d917f, 1px 3px 5px 0 #6c6c6c;
     transition: box-shadow .25s;
   }
 
   .mh-is-dragging .mh-catch-stats-wrapper {
-    box-shadow: 1px 1px 1px 0px #9d917f, 0px 7px 9px 2px #6c6c6c;
+    box-shadow: 1px 1px 1px 0 #9d917f, 0 7px 9px 2px #6c6c6c;
   }
 
   .mh-catch-stats-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ceb7a6;
-    background-color: #926944;
+    justify-content: space-between;
     padding: 10px;
     color: #f6f3eb;
-    cursor: -webkit-grab;
     cursor: grab;
+    background-color: #926944;
+    border-bottom: 1px solid #ceb7a6;
   }
 
   .mh-catch-stats-header h1 {
@@ -222,17 +231,17 @@
     cursor: pointer;
   }
 
-  .mh-catch-stats-close:hover {
-    outline: 1px solid #ccc;
+  .mh-catch-stats-close:hover, .mh-catch-stats-close:focus {
+    color: #926944;
     background-color: #eee;
     border-radius: 50%;
-    color: #926944;
+    outline: 1px solid #ccc;
   }
 
   .mh-catch-stats-body {
     max-height: 90vh;
-    overflow-y: scroll;
     overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   .mh-catch-stats-wrapper .mh-catch-stats:nth-child(odd) {
@@ -241,29 +250,29 @@
 
   .mh-catch-stats {
     display: flex;
-    justify-content: space-between;
-    padding: 2px 0;
     align-items: center;
-    padding: 10px 10px;
+    justify-content: space-between;
+    padding: 10px;
     color: #000;
   }
 
   .mh-catch-stats:hover,
-  .mh-catch-stats-wrapper .mh-catch-stats:nth-child(odd):hover {
-    outline: 1px solid #ccc;
-    background-color: #eee;
-    text-decoration: none;
+  .mh-catch-stats-wrapper .mh-catch-stats:nth-child(odd):hover, .mh-catch-stats:focus,
+  .mh-catch-stats-wrapper .mh-catch-stats:nth-child(odd):focus {
     color: #665f5f;
+    text-decoration: none;
+    background-color: #eee;
+    outline: 1px solid #ccc;
   }
 
   .mh-catch-stats-image {
     position: relative;
+    display: inline-block;
     width: 40px;
     height: 40px;
-    display: inline-block;
     vertical-align: middle;
-    background-size: contain;
     background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 2px;
     box-shadow: 1px 1px 1px #999;
   }
@@ -274,18 +283,18 @@
     bottom: -5px;
     width: 20px;
     height: 20px;
+    background-color: #fff;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-color: #fff;
-    border: 1px solid #333;
     background-size: 80%;
+    border: 1px solid #333;
     border-radius: 50%;
   }
 
   .mh-catch-stats-name {
     display: inline-block;
-    vertical-align: middle;
     padding-left: 10px;
+    vertical-align: middle;
   }
 
   .mh-catch-stats-catches {
