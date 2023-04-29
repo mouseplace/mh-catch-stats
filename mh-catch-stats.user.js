@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Location Catches
-// @version      1.2.3
+// @version      1.2.4
 // @description  View your mouse catches in your current location.
 // @license      MIT
 // @author       bradp
@@ -33,7 +33,7 @@
     );
 
     // Grab the data from the response.
-    const mouseData = data?.mouse_list_category?.subgroups[ 0 ]?.mice;
+    const mouseData = data?.mouse_list_category?.subgroups[0]?.mice;
 
     // Reorder by the num_catches key.
     mouseData.sort((a, b) => {
