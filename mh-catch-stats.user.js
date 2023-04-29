@@ -192,10 +192,6 @@
 
   @media screen and (prefers-reduced-motion: reduce) {
   .mh-catch-stats-wrapper {
-    width: 275px;
-    background: #f6f3eb;
-    border: 1px solid #534022;
-    box-shadow: 1px 1px 1px 0 #9d917f, 1px 3px 5px 0 #6c6c6c;
     transition: none;
   }
   }
