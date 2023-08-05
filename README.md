@@ -1,9 +1,5 @@
 # 🐭️ Mousehunt - Location Catches
 
-![Greasy Fork](https://img.shields.io/greasyfork/dt/463018)
-![GitHub](https://img.shields.io/github/license/mouseplace/mh-catch-stats)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/mouseplace/mh-catch-stats?label=version)
-
 A Userscript for [MouseHunt](https://mousehuntgame.com) to view your mouse catches in your current location.
 
 ## Installation
