@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Location Catches
-// @version      1.2.4
+// @version      1.3.0
 // @description  View your mouse catches in your current location.
 // @license      MIT
 // @author       bradp
@@ -10,6 +10,7 @@
 // @grant        none
 // @run-at       document-end
 // @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.5.2/mousehunt-utils.js
+// @require      https://cdn.jsdelivr.net/npm/script-migration@1.1.1
 // ==/UserScript==
 
 ((function () {
@@ -304,4 +305,6 @@
     icon: 'https://www.mousehuntgame.com/images/ui/hud/menu/prize_shoppe.png?',
     callback: showModal
   });
+
+  migrateUserscript('🐭️ MouseHunt - Location Catches', 'https://greasyfork.org/en/scripts/463018-mousehunt-location-catches');
 })());
